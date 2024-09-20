@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<MovieApp.Models.Movie>
+
+<div class="movie-catalog">
+    @foreach (var movie in Model)
+    {
+        @Html.Partial("_MoviePartial", movie)
+    }
+
+    <!-- Placeholder for adding a new movie -->
+    <div class="movie-card add-movie-card">
+        <a href="@Url.Action("AddMovie", "Home")" class="add-movie-link">
+            <div class="add-movie-icon">+</div>
+            <div>Add a new movie</div>
+        </a>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.movie-card');
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                // Toggle the visibility of the movie-info
+                this.classList.toggle('clicked');
+            });
+        });
+    });
+</script>

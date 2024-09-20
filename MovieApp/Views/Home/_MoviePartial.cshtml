@@ -1,0 +1,16 @@
+﻿
+@model MovieApp.Models.Movie
+
+
+<div class="movie-card">
+    <div class="movie-image">
+        <img src="@Model.ImageUrl" alt="@Model.Title" class="movie-img" />
+        <div class="movie-title">@Model.Title</div>
+    </div>
+    <div class="movie-info">
+        <p><strong>Director:</strong> @Model.Director</p>
+        <p><strong>Release Year:</strong> @Model.ReleaseYear</p>
+        <p><strong>Genre:</strong> @Model.Genre</p>
+    </div>
+</div>
+
